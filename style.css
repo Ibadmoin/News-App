@@ -184,8 +184,61 @@ nav .nav-logo{
 }
 
 .main-body{
-    background: green;
+    /* background: green; */
+    margin-top: 30px;
     width: 100%;
     height: 100vh;
+    display: flex;
+}
+
+
+
+/* news section */
+
+.news-wrapper{
+    width: 75%;
+    height: 100%;
+    /* background: #000; */
+}
+
+.inner-news-wrapper{
+    width: 90%;
+    height: fit-content;
+    background: pink;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.main-banner{
+    background-color: #ffffff;
+    width: 100%;
+    height: 350px;
+    border-radius: 5px ;
+}
+
+.news-content-wrapper{
+    /* background: green; */
+    padding-top:30px ;
+    display: flex;
+   flex-wrap:wrap ;
+   justify-content: space-between;
+   gap: 20px;
+   
+
+}
+/* news card */
+.news-card{
+    background: rgb(255, 255, 255);
+    width: 48%;
+    height: 300px;
+    border-radius: 5px;
+
+}
+
+/* trending side */
+.left-sec{
+    width: 25%;
+    height: 100%;
+    background: yellow;
 }
 

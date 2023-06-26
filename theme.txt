@@ -1,0 +1,13 @@
+
+
+<theme-bg-color>
+ #f4f6f8
+
+ <theme-card-color>
+ #ffffff
+
+ <hover/navbar title color>
+ #259af2
+
+
+ 

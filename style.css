@@ -316,15 +316,15 @@ text-overflow: ellipsis;
     padding-top:30px ;
     display: flex;
    flex-wrap:wrap ;
-   justify-content: space-between;
-   gap: 20px;
+   justify-content:center;
+   gap: 10px;
    
 
 }
 /* news card */
 .news-card{
     background: rgb(255, 255, 255);
-    width: 48%;
+    width: 300px;
     height: 300px;
     border-radius: 5px;
     margin: 0 auto;
@@ -406,11 +406,13 @@ text-overflow: ellipsis;
     /* background: blue; */
     display: flex;
     align-items: center;
+ 
 
 
 }
 .author-name p {
-    font-size: 12px;
+    font-size: 10px;
+    line-height: 20px;
     font-weight: bold;
     padding-left:2px;
     text-transform: capitalize;
@@ -419,7 +421,8 @@ text-overflow: ellipsis;
     width: 30%;
     height: inherit;
     /* background: pink; */
-    font-size: 12px;
+    font-size: 10px;
+    line-height: 20px;
     font-weight: bold;
     color: #8f8d8d;
     display: flex;

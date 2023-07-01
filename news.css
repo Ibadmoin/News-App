@@ -98,3 +98,12 @@ padding-bottom: 30px;
     display: block;
   }
   
+
+  /* news-container */
+  .news{
+    /* background: #000; */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+  }

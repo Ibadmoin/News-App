@@ -150,3 +150,10 @@ loginbtn.addEventListener("click",()=>{
 function signUp(){
     window.location.href='./signup.html'
 }
+
+// signup form//
+
+const registerBtn = document.getElementById("signUpBtn");
+registerBtn.addEventListener("click",()=>{
+    console.log(registerBtn);
+})

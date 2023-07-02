@@ -179,7 +179,7 @@ label input:focus{
     outline: none;
     border: 2px solid rgb(101, 158, 15);
 }
-label i.fa-envelope {
+label i {
     position: absolute;
     left: 20px;
     top: 35px;
@@ -187,13 +187,7 @@ label i.fa-envelope {
     color: #259af2;
   }
   
-  label i.fa-key {
-    position: absolute;
-    left: 20px;
-    top: 35px;
-    color: #259af2;
-    font-size: 1.2em;
-  }
+
 
   
   

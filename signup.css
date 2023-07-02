@@ -1,0 +1,8 @@
+label{
+    position: relative;
+}
+
+label  i {
+    position: absolute;
+    top: 100px;
+}

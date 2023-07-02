@@ -1,87 +1,86 @@
 
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-// import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+function specificNews(type) {
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCt16s58rH2Ch675XJeOhnxmJ9emMY6n90",
-//   authDomain: "hi-news-7813e.firebaseapp.com",
-//   projectId: "hi-news-7813e",
-//   storageBucket: "hi-news-7813e.appspot.com",
-//   messagingSenderId: "498648294507",
-//   appId: "1:498648294507:web:c0387fa33e9aaea1b7fd2e"
-// };
+  window.location.href = "./news.html?type=" + type;
+  
+}
 
-// const app = initializeApp(firebaseConfig);
+let newsType; 
+//=> gives news type depending on URL type.
 
-// const auth = getAuth();
-
-
-// js for news page
-function specificNews(type){
-    window.location.href="./news.html";
-    console.log("hello" + type);
-    // type can be use to show specific serach result on single page of html
+function otherfun() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const type = urlParams.get('type');
+  newsType = type;
+  console.log("type =>", type);
 }
 
 
-window.onscroll = function() {
-    scrollFunction();
-  };
+
+otherfun()
+console.log(newsType);
+
+
+
+
+
+// detching data
+
+// fetch("https://api.newscatcherapi.com/v2/search?q=pakistan&page_size=12",{
+
+// headers: {
+//   'x-api-key': 'nk1yv1Cqs_ExZy4SBlgmiS_WmGsHazJVBxV9l9j3tTA'
+//   }
+// })
+// .then(res=> res.json())
+// .then(res=>{
+//   let news = document.getElementById("news");
+//   const articles = res.articles;
+// for(var i = 0; i < articles.length; i++){
+//   console.log(articles[i]);
+//   const {media, title, author} = articles[i];
   
-  function scrollFunction() {
-    var backToTopBtn = document.getElementById("backToTopBtn");
-  
-    if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-      backToTopBtn.classList.add("show");
-    } else {
-      backToTopBtn.classList.remove("show");
+//   news.innerHTML += `
+//   <div class="news-card" >
+//               <div class="img-wrapper"><img src="${media}" alt=""></div>
+//               <div class="title-wrapper">
+//                   <p class="type" id="newsType">Sports</p>
+//                   <p class="title" id="newsTitle">${title.slice(0,50)}...</p>
+//               </div>
+//               <div class="author-wrapper">
+//                   <div class="news-details">
+//                       <div class="author-img"><img src="../images/profiles/user.jpg" alt=""></div>
+//                       <div class="author-name"><p id="authorName">muhammad ibad</p></div>
+//                       <div class="publish-time"><p id="publishTime">-5 min ago</p></div>
+//                   </div>
+//                   <div class="news-share">
+//                       <img src="../images/icons/save-instagram.png" alt="">
+//                       <img src="../images/icons/share.png" alt="">
+//                   </div>
+//               </div>
+//           </div>`
+// }
+
+// })
+// .catch(err=>console.log(err))
+
+
+
+let getNews = () =>{
+  fetch('https://api.newscatcherapi.com/v2/search?q=Tesla&page_size=12',{
+    headers:{
+      'x-api-key': 'nk1yv1Cqs_ExZy4SBlgmiS_WmGsHazJVBxV9l9j3tTA'
     }
-  }
-  
-  function scrollToTop() {
-    var currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
-    if (currentPosition > 0) {
-      window.requestAnimationFrame(scrollToTop);
-      window.scrollTo(0, currentPosition - currentPosition / 8);
-    }
-  }
-
-//   
-
-function getNews(){
-  var news = document.getElementById("news");
-for (let i = 0; i < 12; i++) {
-  news.innerHTML += `
-  <div class="news-card" >
-              <div class="img-wrapper"><img src="../images/cars.webp" alt=""></div>
-              <div class="title-wrapper">
-                  <p class="type" id="newsType">Sports</p>
-                  <p class="title" id="newsTitle">News cars which will blow your mind 2024</p>
-              </div>
-              <div class="author-wrapper">
-                  <div class="news-details">
-                      <div class="author-img"><img src="../images/profiles/user.jpg" alt=""></div>
-                      <div class="author-name"><p id="authorName">muhammad ibad</p></div>
-                      <div class="publish-time"><p id="publishTime">-5 min ago</p></div>
-                  </div>
-                  <div class="news-share">
-                      <img src="../images/icons/save-instagram.png" alt="">
-                      <img src="../images/icons/share.png" alt="">
-                  </div>
-              </div>
-          </div>`
-  
-}
+  })
+  .then(res=>res.json())
+  .then(res=>console.log(res))
+  .catch(err=>console.log(err))
 }
 
-getNews();
+getNews()
 
 
 
-function load(){
-  console.log('loaded');
-  getNews();
-}
 
 
 

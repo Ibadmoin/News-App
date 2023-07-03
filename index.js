@@ -74,19 +74,55 @@ function logout(){
 
 
 
-let getNews = () =>{
-  fetch('https://api.newscatcherapi.com/v2/search?q=Tesla&page_size=12',{
-    headers:{
-      'x-api-key': 'nk1yv1Cqs_ExZy4SBlgmiS_WmGsHazJVBxV9l9j3tTA'
-    }
-  })
+// let getNews = () =>{
+//   fetch('https://api.newscatcherapi.com/v2/search?q=Tesla&page_size=12',{
+//     headers:{
+//       'x-api-key': 'nk1yv1Cqs_ExZy4SBlgmiS_WmGsHazJVBxV9l9j3tTA'
+//     }
+//   })
+//   .then(res=>res.json())
+//   .then(res=>console.log(res))
+//   .catch(err=>console.log(err))
+// }
+
+// getNews()
+
+
+
+
+
+// test news api 
+
+let trending = () =>{
+
+  let apiKey = ['a19d5c0d64a94130aa919c8ddc0e936a','e775c7e6af4849069ea823d580bcd017','a19d5c0d64a94130aa919c8ddc0e936a','21e945dae29f4cbfb546270d2cc52d9f'];
+  let randomApiKey = apiKey[Math.floor(Math.random()*apiKey.length)]
+  fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${randomApiKey}`)
   .then(res=>res.json())
-  .then(res=>console.log(res))
+  .then(res=>{
+    let trendingBox = document.getElementById('trendingNewsBox');
+    console.log(res);
+    const articles = res.articles;
+    for(var i = 0; i < 5;i++){
+      console.log(articles[i]);
+      const {title, url, urlToImage, author} = articles[i];
+      trendingBox.innerHTML +=`   <a class="trendingbox-anchor" href="${url}" target="_blank"> <div class="trend-news-box" >
+      <div class="news-img-wrapper"><img src="${urlToImage?urlToImage:'./images/news.jpg'}" alt=""></div>
+      <div class="news-title-wrapper">
+          <p class="news-Type" id="treningNewsType">${author?author:'anonymous'}</p>
+          <p class="news-Title" id="treningNewsTitle">${title.slice(0,20)}...</p>
+      </div>
+  </div></a>`
+    }
+
+  })
   .catch(err=>console.log(err))
+
 }
 
-getNews()
 
+// trending();
+//  ==> news function to activate
 
 
 

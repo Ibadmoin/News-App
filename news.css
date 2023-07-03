@@ -16,6 +16,9 @@ body{
     height: fit-content;
     display: flex;
     flex-wrap: wrap;
+
+
+
 padding-bottom: 30px;
 }
 
@@ -101,9 +104,21 @@ padding-bottom: 30px;
 
   /* news-container */
   .news{
-    /* background: #000; */
+    /* background: yellow; */
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     padding-bottom: 20px;
+  }
+
+  .newscard-anchor{
+    text-decoration: none;
+  }
+
+  .title{
+    /* background: pink; */
+    font-size: 12px !important;
+    color: black!important;
+   
   }

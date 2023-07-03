@@ -336,7 +336,9 @@ text-overflow: ellipsis;
 .news-card:hover .img-wrapper img {
     transform: scale(1.1);
 }
-
+.news-card:hover .title-wrapper p{
+    color: #259af2;
+}
 .img-wrapper{
     width: 100%;
     height: 50%;
@@ -388,7 +390,7 @@ text-overflow: ellipsis;
     align-items: center;
 }
 .news-details{
-    width: 62%;
+    width: 70%;
     height: 90%;
     /* background: #000; */
     display: flex;
@@ -422,9 +424,10 @@ text-overflow: ellipsis;
     font-weight: bold;
     padding-left:2px;
     text-transform: capitalize;
+    color: black !important;
 }
 .publish-time{
-    width: 30%;
+    width: 40%;
     height: inherit;
     /* background: pink; */
     font-size: 10px;
@@ -432,7 +435,9 @@ text-overflow: ellipsis;
     font-weight: bold;
     color: #8f8d8d;
     display: flex;
+  justify-content: center;
     align-items: center;
+
 
 
 }
@@ -483,15 +488,16 @@ text-overflow: ellipsis;
     margin-top: 5px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+
     justify-content: space-around;
     
 
 }
 .trend-news-box{
-    width: 90%;
+    width: 95%;
     height: 70px;
     /* background: yellow; */
+    margin: 0 auto;
     display: flex;
     gap: 5px;
 
@@ -593,7 +599,7 @@ text-overflow: ellipsis;
         font-size: 14px;
     }
     .news-card {
-      background-color: lightblue;
+      /* background-color: lightblue; */
       width: 80%;
     }
     .left-sec{
@@ -640,4 +646,43 @@ text-overflow: ellipsis;
       }
   }
 /* media queries */
+
+
+.trendingbox-anchor{
+    /* background: #000; */
+    text-decoration: none;
+   
+
+}
+
+.title-wrapper ul {
+    list-style: none ;
+    /* background: pink; */
+    width: 90%;
+    /* margin: 0 auto; */
+    margin-top: -10px;
+    color: black!important;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.title-wrapper ol {
+    list-style: none ;
+    /* background: pink; */
+    width: 90%;
+    /* margin: 0 auto; */
+    margin-top: -10px;
+    color: black!important;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 

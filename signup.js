@@ -37,8 +37,18 @@ signupSubmitBtn.addEventListener('click', (event) => {
   createUserWithEmailAndPassword(auth, email.value, pass.value, fileName)
     .then(async (userCredential) => {
       const user = userCredential.user;
-      alert("Successful SignUp");
-      // console.log('user==>', user);
+      Swal.fire({
+        title: 'Sign Up Successful!',
+        text: 'Welcome to HI-News.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then(()=>{
+        window.location.href='./index.html';
+      })
+      ;
+      
+      console.log('user==>', user);
+      
 
       await uploadHandleError(fileName, fileItem);
 

@@ -126,6 +126,9 @@ body{
     background-position: left;
     color: white;
   }
+  .form-top button:hover .signup-anchor{
+    color: white;
+  }
    .form-top button:active{
         transform: scale(0.9);
       } 
@@ -292,3 +295,10 @@ label i {
       .err-border{
         border: 1px solid red;
       }
+
+
+      .signup-anchor{
+        text-decoration: none;
+        color: #259af2;
+      }
+      

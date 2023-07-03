@@ -1,4 +1,5 @@
 
+
 const loginbtn = document.getElementById("loginBtn");
 loginbtn.addEventListener("click",()=>{
     var loginEmail = document.getElementById("loginEmail");
@@ -27,10 +28,6 @@ loginbtn.addEventListener("click",()=>{
 
 
 // signup page
-
-function signUp(){
-    window.location.href='./signup.html'
-}
 
 
 
@@ -75,7 +72,14 @@ const auth = getAuth();
         // console.log('user signin==>', user)
           onValue(ref(db, `users/${user.uid}`), (userinfo) => {
             const data = userinfo.val();
-                console.log(data)
+            if(data){
+              window.location.href='./home.html'
+              // => data idder chiye profile ka take page load hote hi hum progile wagera edited wali dhika de
+              // -------------------------------------
+            
+
+                }
+              
           });
        
         // ...
@@ -84,7 +88,16 @@ const auth = getAuth();
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log("error==>", errorMessage)
-        alert(errorMessage)
+     
+        let email_input = document.getElementById('loginEmail');
+        let pass_input = document.getElementById("loginPassword");
+
+        loginEmail.classList.add('err-border')
+        loginPassword.classList.add('err-border');
+         error= document.getElementById("error")
+        error.innerHTML = "Invalid Email or Password!"
+        error.classList.add('show')
+        console.log(email_input, pass_input);
       });
 
   })

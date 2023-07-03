@@ -21,6 +21,14 @@ otherfun()
 console.log(newsType);
 
 
+// logout button with clered history//
+
+function logout(){
+  window.location.href='./index.html';
+  window.history.replaceState({}, document.title, 'index.html')
+}
+
+
 
 
 

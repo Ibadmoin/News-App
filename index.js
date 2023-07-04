@@ -29,4 +29,20 @@ window.onscroll = function() {
     }
   }
   
+
+  let btn = document.getElementById('btn');
+  btn.addEventListener('click', toggle)
+  var menuOpen = false;
   
+  function toggle(){
+      let menu = document.getElementById('menu');
+      menu.classList.toggle("active")
+      if (!menuOpen){
+          btn.classList.add("open")
+          menuOpen = true;
+  
+      }else{
+          btn.classList.remove("open")
+          menuOpen = false;
+      }
+  }

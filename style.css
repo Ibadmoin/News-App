@@ -299,9 +299,10 @@ text-overflow: ellipsis;
 .inner-news-wrapper{
     width: 90%;
     height: fit-content;
-    background: pink;
+    /* background: pink; */
     margin: 0 auto;
     padding-bottom: 30px;
+
 }
 
 .main-banner{
@@ -317,7 +318,7 @@ text-overflow: ellipsis;
     display: flex;
    flex-wrap:wrap ;
    justify-content:center;
-   gap: 10px;
+   gap: 30px;
    
 
 }
@@ -628,11 +629,11 @@ text-overflow: ellipsis;
   }
 @media only screen and (max-width: 768px) {
     .left-sec {
-      background-color: lightblue;
+      /* background-color: lightblue; */
       display: none;
     }
     .news-wrapper{
-        background-color: lightblue;
+        /* background-color: lightblue; */
        width: 100%;
       }
       .news-card{
@@ -686,3 +687,14 @@ text-overflow: ellipsis;
     text-overflow: ellipsis;
 }
 
+
+.newscard-anchor{
+    text-decoration: none;
+  }
+
+  .title{
+    /* background: pink; */
+    font-size: 12px !important;
+    color: black!important;
+   
+  }

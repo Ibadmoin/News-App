@@ -3,7 +3,6 @@
 
 
 
-
 window.onscroll = function() {
     scrollFunction();
   };
@@ -29,24 +28,31 @@ window.onscroll = function() {
 //   
 
 
-;
+
+
+
 
 var page=1;
 
 
-let getnews = (type) =>{
+let getnews = (searchQuery,page) =>{
 
-  const apiKey = ['a19d5c0d64a94130aa919c8ddc0e936a','e775c7e6af4849069ea823d580bcd017','a19d5c0d64a94130aa919c8ddc0e936a','21e945dae29f4cbfb546270d2cc52d9f'];
+  const apiKey = ['d179d56e91e7403d935a4592eee44200','a19d5c0d64a94130aa919c8ddc0e936a','e775c7e6af4849069ea823d580bcd017','a19d5c0d64a94130aa919c8ddc0e936a','21e945dae29f4cbfb546270d2cc52d9f'];
   const randomApiKey = apiKey[Math.floor(Math.random()*apiKey.length)]
-  fetch(`https://newsapi.org/v2/everything?q=pakistan&pageSize=12&page=${page?page:1}&apiKey=${randomApiKey}`)
+  fetch(`https://newsapi.org/v2/everything?q=${searchQuery}&pageSize=12&page=${page?page:1}&apiKey=${randomApiKey}`)
   .then(res=>res.json())
   .then(res=>{
+
     
-    
+
       let newsCard = document.getElementById("news");
+      newsCard.innerHTML = "";
+ 
+ 
     let articles = res.articles;
     for(var i =0; i < articles.length;i++){
       console.log(articles[i]);
+
 
       const {title, url, urlToImage,author, publishedAt, description,source: { name }} = articles[i];
      newsCard.innerHTML += `      <a class="newscard-anchor" href="${url}" target="_blank" >  <div class="news-card" >
@@ -74,11 +80,42 @@ let getnews = (type) =>{
   .catch(err=>console.log(err));
 }
 
-getnews();
+
 
 
 function load(){
   console.log('loaded');
   page++;
-getnews();
+getnews(searchQuery,page);
 }
+
+let searchQuery = ""; // Declare the searchQuery variable outside the event listener
+const search = document.getElementById("search");
+const searchbtn = document.getElementById("searchBtn");
+searchbtn.addEventListener("click", () => {
+  searchQuery = search.value; // Update the searchQuery variable
+  console.log(searchQuery);
+  getnews(searchQuery, page);
+  page = 1;
+});
+
+
+
+
+
+
+function otherfun() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const type = urlParams.get('type');
+  console.log("type =>", type);
+  searchQuery = type;
+  page = 1;
+  
+}
+
+otherfun();
+
+getnews(searchQuery,page);
+
+
+

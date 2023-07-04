@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HI-News</title>
+    <link rel="icon" href="./images/icons/hi news logo.svg">
+    <link rel="stylesheet" href="style.css">
+
+
+    <script src="https://kit.fontawesome.com/b4fc311639.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- side nav bar -->
+    <nav class="sidenav">
+        <div class="nav-logo">
+            <div class="nav-wrapper">
+                <div class="logo-img-wrapper"><img src="./images/icons/hi news logo.svg" alt=""></div>
+                <div class="menu-wrapper"><i class="fa-solid fa-bars"></i></div>
+            </div>
+
+
+
+
+        </div>
+        <!-- user profile -->
+        <div class="profile-wrapper">
+            <div class="profile">
+                <div class="profile-img-wrapper">
+                    <img src="./images/profiles/user.jpg" alt="">
+                </div>
+                <div class="profile-detail-wrapper">
+                    <h5 id="profile-name">Muhammad Ibad</h5>
+                    <div class="profile-plan-wrapper">
+                        <p>Gold plan</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- more menu -->
+        <div class="more-menu-wrapper">
+            <div class="menu-storage more-menu">
+                <div class="more-menu-icon"><img src="./images/icons/bookmark.png" alt=""></div>
+                <div class="more-menu-options">
+                    <p>Storage</p>
+                </div>
+            </div>
+            <div class="menu-storage more-menu">
+                <div class="more-menu-icon"><img src="./images/icons/newspaper.png" alt=""></div>
+                <div class="more-menu-options">
+                    <p>News</p>
+                </div>
+            </div>
+            <div class="menu-storage more-menu">
+                <div class="more-menu-icon"><img src="./images/icons/musical-note.png" alt=""></div>
+                <div class="more-menu-options">
+                    <p>Music</p>
+                </div>
+            </div>
+            <div class="menu-storage more-menu">
+                <div class="more-menu-icon"><img src="./images/icons/video.png" alt=""></div>
+                <div class="more-menu-options">
+                    <p>Movie</p>
+                </div>
+            </div>
+            <div class="menu-storage more-menu">
+                <div class="more-menu-icon"><img src="./images/icons/plane.png" alt=""></div>
+                <div class="more-menu-options">
+                    <p>Travel</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- account & settings -->
+        <div class="setting-wrapper">
+            <div class="menu-storage more-menu">
+                <div class="more-menu-icon"><img src="./images/icons/user.png" alt=""></div>
+                <div class="more-menu-options">
+                    <p>Account</p>
+                </div>
+            </div>
+            <div class="menu-storage more-menu">
+                <div class="more-menu-icon"><img src="./images/icons/setting.png" alt=""></div>
+                <div class="more-menu-options">
+                    <p>Settings</p>
+                </div>
+            </div>
+            <div class="menu-storage more-menu">
+                <div class="more-menu-icon"><img src="./images/icons/support.png" alt=""></div>
+                <div class="more-menu-options">
+                    <p>Help & Support</p>
+                </div>
+            </div>
+            <div class="menu-storage more-menu">
+                <div class="more-menu-icon"><img src="./images/icons/logout.png" alt=""></div>
+                <div onclick="logout()" class="more-menu-options">
+                    <p>Log Out</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- side nav bar end -->
+
+    <!-- right container -->
+    <div class="right-wrapper">
+
+        <!-- news event nav bar top -->
+        <div class="container news-nav">
+            <!-- news-events -->
+            <div class="news-events">
+                <div><a href="#" onclick="specificNews('latest')">Latest News</a></div>
+                <div><a href="#" onclick="specificNews('politcs')">Politcs</a></div>
+                <div><a href="#" onclick="specificNews('business')">Business</a></div>
+                <div><a href="#" onclick="specificNews('sports')">Sports</a></div>
+                <div><a href="#" onclick="specificNews('tech')">Tech</a></div>
+            </div>
+
+            <!-- news-events -->
+            <!-- search div -->
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Type anything here.">
+                <button id="searchBtn"><img src="" alt=""><i class="fa-solid fa-magnifying-glass"></i></button>
+
+            </div>
+            <!-- search div -->
+
+
+        </div>
+
+        <!-- news event nav bar top end -->
+
+        <!-- main body start here  -->
+        <div class="container main-body">
+            <div class="news-wrapper">
+                <div class="inner-news-wrapper">
+                    <div class="main-banner">
+                        <!-- banner main page needs to be added and customize -->
+                    </div>
+                    <!-- news cards -->
+                    <div class="news-content-wrapper" id="contentWrapper">
+                        <!-- <div class="news-card">
+                            <div class="img-wrapper"><img src="./images/cars.webp" alt=""></div>
+                            <div class="title-wrapper">
+                                <p class="type" id="newsType">Sports</p>
+                                <p class="title" id="newsTitle">News cars which will blow your mind 2024</p>
+                            </div>
+                            <div class="author-wrapper">
+                                <div class="news-details">
+                                    <div class="author-img"><img src="./images/profiles/user.jpg" alt=""></div>
+                                    <div class="author-name">
+                                        <p id="authorName">muhammad ibad</p>
+                                    </div>
+                                    <div class="publish-time">
+                                        <p id="publishTime">-5 min ago</p>
+                                    </div>
+                                </div>
+                                <div class="news-share">
+                                    <img src="./images/icons/save-instagram.png" alt="">
+                                    <img src="./images/icons/share.png" alt="">
+                                </div>
+                            </div>
+                        </div> -->
+                     
+                    
+                     
+
+                    </div>
+                </div>
+            </div>
+            <!-- trending box -->
+            <div class="left-sec">
+                <div class="trending-news-wrapper">
+                    <div class="trending-sec-head-wrapper">
+                        <p>Trending News</p>
+                    </div>
+                    <div class="trending-news-link" id="trendingNewsBox">
+              <!-- <a class="trendingbox-anchor" href="">
+                <div class="trend-news-box">
+                    <div class="news-img-wrapper"><img src="./images/news.jpg" alt=""></div>
+                    <div class="news-title-wrapper">
+                        <p class="news-Type" id="treningNewsType">sports</p>
+                        <p class="news-Title" id="treningNewsTitle">fifa 2023 will be an awesome match</p>
+                    </div>
+                </div>
+              </a> -->
+                   
+                    </div>
+                </div>
+                <div class="trending-sec-wrapper">
+                    <div class="trending-sec-head-wrapper">
+                        <p>Trending Sections</p>
+                    </div>
+                    <div class="trending-sec-content-wrapper">
+                        <ul>
+                            <a onclick="specificNews('politcs')">
+                                <li><img src="./images/icons/red-flag.png" alt="">Politcs</li>
+                            </a>
+                            <a onclick="specificNews('tech')">
+                                <li><img src="./images/icons/cpu.png" alt="">Tech</li>
+                            </a>
+                            <a onclick="specificNews('health')">
+                                <li><img src="./images/icons/heart.png" alt="">Health</li>
+                            </a>
+                            <a onclick="specificNews('sports')">
+                                <li><img src="./images/icons/football.png" alt="">Sports</li>
+                            </a>
+                            <a onclick="specificNews('bussiness')">
+                                <li><img src="./images/icons/briefcase.png" alt="">Bussiness</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main body end here -->
+    </div>
+    <!-- right container -->
+
+
+
+
+
+
+
+
+    <!-- scripts -->
+    <script  src="index.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js" integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+
+    <!-- scripts End-->
+</body>
+
+</html>
